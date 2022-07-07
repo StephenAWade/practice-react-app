@@ -1,4 +1,17 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.css'
+import { Home } from './Home'
+import { FourOhFour } from './FourOhFour'
 import React from 'react'
-import 'bootstrap/dist/css/bootstrap.css';
 
-export const App = () => ( <h1 className="text-info">Is this thing on?</h1> );
+export const App = () => (
+    <>
+        <BrowserRouter>
+            <Routes>
+                <Route  path='/' element={<Home />} />
+                <Route path='*' element={<FourOhFour />} />
+            </Routes>
+        </BrowserRouter>
+
+    </>
+)
